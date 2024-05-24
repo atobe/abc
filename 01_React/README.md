@@ -1,5 +1,7 @@
 # This is an implementation of the ReAct pattern
 
+[Slide Deck from the meetup](https://docs.google.com/presentation/d/1yv3b6-fw6Y9WmBewsiedr50Sk7xYjcPnYpQsCxbt3GQ/edit?usp=sharing)
+
 ## Running the code
 
 1. **Clone this repo**
