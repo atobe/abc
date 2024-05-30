@@ -1,0 +1,8 @@
+Extract bullet points from this article. Our focus is on the chang'e 6 mission to the moon. 
+All other information is irrelevant. 
+Only include *new* things that we haven't seen before. 
+We are looking for significant new information. 
+It's okay if you don't find anything new, in that case just return an empty list.
+Include the date/time of the event if possible.
+Keep the points short and clear.
+Include relevant information like date, time, location, individual and institution names, etc.
