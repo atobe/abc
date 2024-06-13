@@ -43,7 +43,8 @@ export MODEL=gpt-4-0125-preview
 5. **Run the agent**
 
 ```bash
-ytprecis precis "Apple WWDC 2024"
+ytprecis precis "Apple's WWDC 2024 AI announcements"
+open output.html
 ```
 
 It might take multiple runs, some of the Pydantic structures are large and fail sometimes.
