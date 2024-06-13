@@ -6,5 +6,6 @@ Agents
 - [03_YTPrecis](https://github.com/atobe/abc/tree/main/03_YTPrecis)
 
 Easy On-ramp
-- Calling the OpenAI API
+- [Calling the OpenAI API](https://github.com/atobe/abc/tree/main/easy_onramp/01_calling_openai)
+- [Using the Instructor library](https://github.com/atobe/abc/tree/main/easy_onramp/02_instructor)
 
