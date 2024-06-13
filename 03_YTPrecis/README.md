@@ -62,6 +62,7 @@ This will delete the final edit for instance.
 
 | Item                                        | Label                                     |
 |---------------------------------------------|-------------------------------------------|
+| 2c127f8f5e8da3600d4cc0c943a8e8b             | the hash of "Apple's WWDC 2024 AI announcements" |
 | search_results.2c127f8f5e8da3600d4cc0c943a8e8bd | search_results                 |
 | p2dhZ3AoDDt                                 | transcript for video p2dhZ3AoDDt                     |
 | points.p2dhZ3AoDDt                          | extracted points for video                          |
