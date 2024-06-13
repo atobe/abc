@@ -1,4 +1,4 @@
-# This is an implementation of a workflow that can create a short summary video from many YT videos.
+# Workflow summarizes many YT videos into one shorter video
 
 ## Running the code
 
@@ -35,12 +35,12 @@ I used gpt-4-0125-preview. GPT-4 proper is better but this is cheaper.
 export MODEL=gpt-4-0125-preview
 ```
 
-5. **Set up YouTube API Keys**
+6. **Set up YouTube API Keys**
 
 - https://www.youtube.com/watch?v=uz7dY8qTFJw
 - export YT_API_KEY=...
 
-5. **Run the agent**
+7. **Run the agent**
 
 ```bash
 ytprecis precis "Apple's WWDC 2024 AI announcements"
@@ -51,3 +51,19 @@ It might take multiple runs, some of the Pydantic structures are large and fail 
 I've had to try 2-3 times sometimes.
 The cache ensures you are not redoing any work that has already finished successfully.
 
+8. **Examine/edit the cache**
+
+```bash
+ytprecis cache list
+ytprecis cache delete edit.2c127f8f5e8da3600d4cc0c943a8e8bd
+```
+
+This will delete the final edit for instance.
+
+| Item                                        | Label                                     |
+|---------------------------------------------|-------------------------------------------|
+| search_results.2c127f8f5e8da3600d4cc0c943a8e8bd | search_results                 |
+| p2dhZ3AoDDt                                 | transcript for video p2dhZ3AoDDt                     |
+| points.p2dhZ3AoDDt                          | extracted points for video                          |
+| organized_points.2c127f8f5e8da3600d4cc0c943a8e8bd | organized_points               |
+| edit.2c127f8f5e8da3600d4cc0c943a8e8bd       | video edit                            |
