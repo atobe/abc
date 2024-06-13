@@ -2,3 +2,4 @@ openai
 instructor
 pydantic
 youtube_transcript_api
+devtools
