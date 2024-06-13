@@ -1,4 +1,5 @@
 import click
+from .model import *
 
 
 @click.group()
@@ -36,6 +37,15 @@ def list():
         print(key)
 
 
+@cache.command()
+@click.argument("key")
+def show(key):
+    from .cache import cache
+    from devtools import pprint
+
+    pprint(cache[key])
+
+
 @main.group()
 def utils():
     pass
@@ -45,7 +55,9 @@ def utils():
 @click.argument("parts", nargs=-1)
 def hashtest(parts):
     from .utils import phrase, hashstring
+
     print(hashstring(phrase(parts)))
+
 
 if __name__ == "__main__":
     main()
