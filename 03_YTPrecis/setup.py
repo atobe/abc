@@ -3,7 +3,7 @@
 from setuptools import setup
 
 setup(
-    name='news',
+    name='ytprecis',
     version='0.1',
     packages=['ytprecis'],
     install_requires=[

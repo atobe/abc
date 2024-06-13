@@ -1,4 +1,4 @@
-# This is an implementation of an agent that follows a single news story over a long period
+# This is an implementation of a workflow that can create a short summary video from many YT videos.
 
 ## Running the code
 
@@ -12,13 +12,13 @@
 
 ```bash
 python -m venv ytprecis_venv
-source ytprecis/bin/activate
+source ytprecis_venv/bin/activate
 ```
 
 3. **Install the package**
 
 ```bash
-cd 03_YTPrecis
+cd abc/03_YTPrecis
 pip install -r requirements.txt
 pip install -e .
 ```
