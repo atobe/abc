@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Segmented Videos</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="player"></div>
+        <div id="segments"><div class="segment">qkYoBNdcXBU, 15:1683</div>
+<div class="segment">qkYoBNdcXBU, 38:41</div>
+<div class="segment">p2dhZ3AoDDs, 1:5</div>
+<div class="segment">p2dhZ3AoDDs, 198:206</div>
+<div class="segment">qkYoBNdcXBU, 148:321</div>
+<div class="segment">qkYoBNdcXBU, 419:469</div>
+<div class="segment">cErKv-cqSn8, 141:169</div>
+<div class="segment">Own9MiaP57o, 99:104</div>
+<div class="segment">p2dhZ3AoDDs, 597:606</div>
+<div class="segment">6KeVsjQmftc, 103:125</div></div>
+    </div>
+    <script>
+        // Load YouTube IFrame Player API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        var currentSegment = 0;
+        var segments = [
+            {videoId: 'qkYoBNdcXBU', startSeconds: 15, endSeconds: 1684},
+{videoId: 'qkYoBNdcXBU', startSeconds: 38, endSeconds: 42},
+{videoId: 'p2dhZ3AoDDs', startSeconds: 1, endSeconds: 6},
+{videoId: 'p2dhZ3AoDDs', startSeconds: 198, endSeconds: 207},
+{videoId: 'qkYoBNdcXBU', startSeconds: 148, endSeconds: 322},
+{videoId: 'qkYoBNdcXBU', startSeconds: 419, endSeconds: 470},
+{videoId: 'cErKv-cqSn8', startSeconds: 141, endSeconds: 170},
+{videoId: 'Own9MiaP57o', startSeconds: 99, endSeconds: 105},
+{videoId: 'p2dhZ3AoDDs', startSeconds: 597, endSeconds: 607},
+{videoId: '6KeVsjQmftc', startSeconds: 103, endSeconds: 126}
+        ];
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '315',
+                width: '560',
+                playerVars: { 'autoplay': 1 },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            console.log('Player is ready')
+            playSegment();
+        }
+
+        function playSegment() {
+            var segment = segments[currentSegment];
+            player.loadVideoById({
+                videoId: segment.videoId,
+                startSeconds: segment.startSeconds,
+                endSeconds: segment.endSeconds
+            });
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                currentSegment++;
+                if (currentSegment < segments.length) {
+                    playSegment();
+                }
+            }
+        }
+    </script>
+</body>
+</html>

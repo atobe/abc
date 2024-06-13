@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Segmented Videos</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        iframe {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="player"></div>
+        <div id="segments">SEGMENTS</div>
+    </div>
+    <script>
+        // Load YouTube IFrame Player API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        var currentSegment = 0;
+        var segments = [
+            VIDEO_SEGMENTS
+        ];
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '315',
+                width: '560',
+                playerVars: { 'autoplay': 1 },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            console.log('Player is ready')
+            playSegment();
+        }
+
+        function playSegment() {
+            var segment = segments[currentSegment];
+            player.loadVideoById({
+                videoId: segment.videoId,
+                startSeconds: segment.startSeconds,
+                endSeconds: segment.endSeconds
+            });
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                currentSegment++;
+                if (currentSegment < segments.length) {
+                    playSegment();
+                }
+            }
+        }
+    </script>
+</body>
+</html>
