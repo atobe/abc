@@ -1,5 +1,7 @@
 # Workflow summarizes many YT videos into one shorter video
 
+[Slide Deck](https://docs.google.com/presentation/d/1pLLqDkFF6UkdOh4fLXa98xPgoUmbc9kIOfd-5gSALyo/edit?usp=sharing)
+
 ## Running the code
 
 1. **Clone this repo**

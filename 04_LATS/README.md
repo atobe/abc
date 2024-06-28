@@ -1,5 +1,7 @@
 # Implementation of LATS
 
+[Slide Deck](https://docs.google.com/presentation/d/1gedRSTZB-f_glHojrwre7YwstcT0HdcRjnmzNE-1acI/edit?usp=sharing)
+
 ## Running the code
 
 1. **Clone this repo**

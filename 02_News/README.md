@@ -1,5 +1,7 @@
 # This is an implementation of an agent that follows a single news story over a long period
 
+[Slide Deck](https://docs.google.com/presentation/d/13th5xg_bCaHaHcXkL_lI9UcOpWclmeBOySF29je2DSE/edit?usp=sharing)
+
 ## Running the code
 
 1. **Clone this repo**
