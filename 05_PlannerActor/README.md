@@ -46,8 +46,9 @@ export MODEL=gpt-4-0125-preview
 raal
 ```
 
-7. **Run LATS on a HumanEval task**
+7. **Run Planner+Actor**
 
 ```bash
-planner_actor "What is einstein's age to the power of 2?"
+planner_actor "What is Einstein's age to the power of 2?"
+planner_actor "What is the age difference between Albert Einstein and Issac Newton?"
 ```
