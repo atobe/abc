@@ -6,6 +6,7 @@ Agents
 - [03_YTPrecis](https://github.com/atobe/abc/tree/main/03_YTPrecis)
 - [04_LATS](https://github.com/atobe/abc/tree/main/04_LATS)
 - [05_Planner+Actor](https://github.com/atobe/abc/tree/main/05_PlannerActor)
+- [07_DERA](https://github.com/atobe/abc/tree/main/07_DERA)
 
 Easy On-ramp
 - [Calling the OpenAI API](https://github.com/atobe/abc/tree/main/easy_onramp/01_calling_openai)
